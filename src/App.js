@@ -1,81 +1,29 @@
-import React from 'react';
-import './App.css';
-import Logo from './components/Logo';
-import KorLogin from './components/KorLogin';
-import EngLogin from './components/EngLogin';
-import Footer from './components/Footer';
-import Advertise from './components/Advertise';
-import { HashRouter, Route } from 'react-router-dom';
-import KorQr from './components/KorQr';
-import EngQr from './components/EngQr';
-import KorDisposable from './components/KorDisposable';
-import EngDisposable from './components/EngDisposable';
-import SignUp from './components/SignUp';
-
+import React from "react";
+import "./App.css";
+import Login from "./components/Login";
+import { HashRouter, Route } from "react-router-dom";
+import Movie_App from "./movie_app/Movie_App";
 class App extends React.Component {
-    state = {
-        mode: 'Kor',
-    };
-
-    article = null;
-
-    modeControl() {
-        if (this.state.mode === 'Kor') {
-            this.article = <Route path="/" exact={true} component={KorLogin} />;
-        } else if (this.state.mode === 'Eng') {
-            this.article = <Route path="/" exact={true} component={EngLogin} />;
-        }
-    }
-
-    render() {
-        this.modeControl();
-
-        return (
-            <div className="loginWrap">
-                <header className="selectLanguage">
-                    <select
-                        name="Language"
-                        id=""
-                        onChange={function (e) {
-                            e.preventDefault();
-                            this.setState({ mode: e.target.value });
-                        }.bind(this)}
-                    >
-                        <option value="Kor">한국어</option>
-                        <option value="Eng">English</option>
-                        <option value="한국어">한국어</option>
-                        <option value="한국어">한국어</option>
-                    </select>
-                </header>
-
-                <div className="App">
-                    <Logo />
-                    {/*네이버 로고*/}
-
-                    <HashRouter>
-                        {this.article}
-                        <Route path="/korqr" exact={true} component={KorQr} />
-                        <Route path="/engqr" exact={true} component={EngQr} />
-                        <Route
-                            path="/kordisposable"
-                            exact={true}
-                            component={KorDisposable}
-                        />
-                        <Route
-                            path="/engdisposable"
-                            exact={true}
-                            component={EngDisposable}
-                        />
-                        <Route path="/signup" exact={true} component={SignUp} />
-                    </HashRouter>
-
-                    <Advertise />
-
-                    <Footer />
-                </div>
-            </div>
-        );
-    }
+  //문제점: /movie에서 공통부분이 나와요
+  //무비일 때는 login exact 무비만 나옴
+  //반대
+  // exact = false;
+  // http://localhost:3003/#/movie
+  // let a = window.location.href.split("#");
+  // if (a[1] === "/movie") {
+  //   this.exact = true;
+  //   console.log(this.exact);
+  // }
+  // console.log(this.exact);
+  render() {
+    window.location.href = "/#/login/";
+    return (
+      <HashRouter>
+        <Route path="/login" component={Login} />
+        <Route path="/movie" component={Movie_App} />
+      </HashRouter>
+    );
+  }
 }
 
 export default App;
