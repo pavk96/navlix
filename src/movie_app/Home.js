@@ -3,7 +3,6 @@ import axios from "axios";
 import HomeSelected from "./HomeSelected";
 import Search from "./Search";
 import SearchedPage from "./SearchedPage";
-import { Link } from "react-router-dom";
 class Home extends React.Component {
   state = {
     isLoading: true,
