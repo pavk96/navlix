@@ -2,13 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class SignUp extends React.Component {
+  // e.preventDefault(); 를 쓰면 action의 값은 받아오지만 페이지 이동이 안 됨
+  // if (LS_item !== null) {
+  //   signUpList.push(...LS_item);
+  //   signUpList.find((item) =>
+  //     item.id === e.target.id.value
+  //       ? alert("중복쓰~")
+  //       : signUpList.push(signUpObject)
+  //   );
+  // } else {
+  //   signUpList.push(signUpObject);
+  // }
+
   render() {
     return (
       <div>
         <form
           id="textarea"
           onSubmit={(e) => {
-            //e.preventDefault(); 를 쓰면 action의 값은 받아오지만 페이지 이동이 안 됨
             const signUp = "signUp";
             const signUpList = [];
             const signUpObject = {
@@ -16,16 +27,6 @@ class SignUp extends React.Component {
               pw: e.target.pw.value,
             };
             const LS_item = JSON.parse(localStorage.getItem(signUp));
-            // if (LS_item !== null) {
-            //   signUpList.push(...LS_item);
-            //   signUpList.find((item) =>
-            //     item.id === e.target.id.value
-            //       ? alert("중복쓰~")
-            //       : signUpList.push(signUpObject)
-            //   );
-            // } else {
-            //   signUpList.push(signUpObject);
-            // }
 
             if (LS_item !== null) {
               signUpList.push(...LS_item);

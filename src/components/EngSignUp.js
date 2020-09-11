@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class EngSignUp extends React.Component {
+  // e.preventDefault();를 쓰면 action의 값은 받아오지만 페이지 이동이 안 됨
+  // window.location.href = "http://localhost:3000/";
+
   render() {
     return (
       <div>
@@ -10,7 +13,6 @@ class EngSignUp extends React.Component {
           action="/#/login"
           method="post"
           onSubmit={(e) => {
-            // e.preventDefault();를 쓰면 action의 값은 받아오지만 페이지 이동이 안 됨
             const signUp = "signUp";
             const signUpList = [];
             const LS_item = JSON.parse(localStorage.getItem(signUp));
@@ -24,7 +26,6 @@ class EngSignUp extends React.Component {
             console.dir(e.target);
             signUpList.push(signUpObject);
             localStorage.setItem(signUp, JSON.stringify(signUpList));
-            // window.location.href = "http://localhost:3000/";
           }}
         >
           <input name="id" type="text" placeholder="ID" className="input" />

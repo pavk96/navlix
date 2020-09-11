@@ -154,7 +154,7 @@ class Latest extends React.Component {
                     />
                     <p>{content.original_title}</p>
                     <i
-                      class={this.localGet(content)} //far 빈하트 fas 찬하트
+                      class={this.localGet(content)}
                       name={content.original_title}
                       onClick={(e) => {
                         if (e.target.className === "far fa-heart") {

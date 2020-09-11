@@ -13,7 +13,6 @@ class Nav extends React.Component {
   // }
   render() {
     return (
-      //API,내가찜한 콘텐츠,검색기능,추천검색어
       <div className="headerWrap">
         <header className="header">
           <div className="logo">

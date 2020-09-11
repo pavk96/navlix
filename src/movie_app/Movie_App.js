@@ -12,12 +12,12 @@ class Movie_App extends React.Component {
       <>
         {/* API,내가찜한 콘텐츠,검색기능,추천검색어 //네비 //장르,최신,찜 */}
         <Nav />
-        {/* //각 섹션마다 검색이벤트(submit); */}
+        {/* 각 섹션마다 검색이벤트(submit); */}
         <Route path="/movie/latest" exact={true} component={Latest} />
         <Route path="/movie/home" exact={true} component={Home} />
         <Route path="/movie/mylist" exact={true} component={MyList} />
         <KorFooter />
-        {/* //푸터 */}
+        {/* 푸터 */}
       </>
     );
   }

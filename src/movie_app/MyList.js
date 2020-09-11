@@ -51,7 +51,7 @@ class MyList extends React.Component {
               />
               {content.original_title}
               <i
-                class="fas fa-heart" //far 빈하트 fas 찬하트
+                class="fas fa-heart"
                 name={content.original_title}
                 onClick={() => {
                   this.localRemove(content);
