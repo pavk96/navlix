@@ -16,7 +16,7 @@ class App extends React.Component {
   // }
   // console.log(this.exact);
   render() {
-    window.location.href = "/#/login/";
+    window.location.href = "/#/login";
     return (
       <HashRouter>
         <Route path="/login" component={Login} />

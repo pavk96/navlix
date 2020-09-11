@@ -7,7 +7,6 @@ class SignUp extends React.Component {
       <div>
         <form
           id="textarea"
-          method="post"
           onSubmit={(e) => {
             //e.preventDefault(); 를 쓰면 action의 값은 받아오지만 페이지 이동이 안 됨
             const signUp = "signUp";
