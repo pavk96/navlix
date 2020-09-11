@@ -6,7 +6,11 @@ class MyList extends React.Component {
   MYLIST = "mylist";
   objlist = [];
   localLoad = () => {
-    this.objlist = JSON.parse(localStorage.getItem(this.MYLIST));
+    if (JSON.parse(localStorage.getItem(this.MYLIST))) {
+      this.objlist = JSON.parse(localStorage.getItem(this.MYLIST));
+    } else {
+      return;
+    }
   };
   localGet = (content) => {
     const ML_item = JSON.parse(localStorage.getItem(this.MYLIST));
